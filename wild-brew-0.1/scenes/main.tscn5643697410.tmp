@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b4cgo6xtdjjlc"]
+
+[ext_resource type="PackedScene" uid="uid://bifu2ger8gxhq" path="res://scenes/entities/player.tscn" id="1_o5qli"]
+
+[node name="Main" type="Node2D" unique_id=487464609]
+
+[node name="UIRoot" type="Node" parent="." unique_id=419066017]
+
+[node name="UIManager" type="Node" parent="UIRoot" unique_id=1013539379]
+
+[node name="UI" type="Node" parent="UIRoot" unique_id=27642622]
+
+[node name="GameplayRoot" type="Node" parent="." unique_id=1694003617]
+
+[node name="GameplayManager" type="Node" parent="GameplayRoot" unique_id=370972173]
+
+[node name="Gameplay" type="Node" parent="GameplayRoot" unique_id=147783078]
+
+[node name="HUD" type="Node" parent="GameplayRoot/Gameplay" unique_id=1043136061]
+
+[node name="LevelRoot" type="Node" parent="GameplayRoot/Gameplay" unique_id=219987415]
+
+[node name="LevelManager" type="Node" parent="GameplayRoot/Gameplay/LevelRoot" unique_id=378612003]
+
+[node name="Level" type="Node" parent="GameplayRoot/Gameplay/LevelRoot" unique_id=1308688989]
+
+[node name="Player" parent="GameplayRoot/Gameplay" unique_id=673335797 instance=ExtResource("1_o5qli")]
+position = Vector2(147, 102)
