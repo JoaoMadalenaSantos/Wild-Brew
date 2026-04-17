@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyd8vvjuedjg5"
-path="res://.godot/imported/Hills.png-c1c30a191dca70e7ce90726bf46fb099.ctex"
+uid="uid://b47xhjg7kur0i"
+path="res://.godot/imported/spr_in_vehicle_0.png-2f1af6a45c1b47e4dbbf1c01a55340d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/level/Hills.png"
-dest_files=["res://.godot/imported/Hills.png-c1c30a191dca70e7ce90726bf46fb099.ctex"]
+source_file="res://assets/textures/level/spr_in_vehicle_0.png"
+dest_files=["res://.godot/imported/spr_in_vehicle_0.png-2f1af6a45c1b47e4dbbf1c01a55340d2.ctex"]
 
 [params]
 

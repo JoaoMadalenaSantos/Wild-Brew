@@ -200,7 +200,7 @@ collision_mask = 8
 [node name="GroundDetector" type="Area2D" parent="." unique_id=826276547]
 position = Vector2(8, 4)
 collision_layer = 0
-collision_mask = 6
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GroundDetector" unique_id=1942693602]
 position = Vector2(0, 4)

@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://wca4wn1nmwcy"]
+
+[ext_resource type="Script" uid="uid://dbw4v7kox8nwi" path="res://scripts/transition_screen.gd" id="1_5ar7y"]
+[ext_resource type="Shader" uid="uid://dlcr43mokwe4f" path="res://scripts/shaders/transition_mask.gdshader" id="2_indjc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ha2vg"]
+shader = ExtResource("2_indjc")
+shader_parameter/circle_diameter = 0.0
+shader_parameter/pixel_size = 4.0
+
+[node name="TransitionScreen" type="Control" unique_id=985824951]
+clip_children = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5ar7y")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=155051109]
+material = SubResource("ShaderMaterial_ha2vg")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.21960784, 0.08627451, 0.19215687, 1)
+
+[node name="Timer" type="Timer" parent="." unique_id=1935053587]
+one_shot = true

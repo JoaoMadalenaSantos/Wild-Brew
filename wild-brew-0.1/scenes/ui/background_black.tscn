@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bde8vy4yygr6b"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_te3ct"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_bgaik"]
+
+[node name="BackgroundBlack" type="CanvasLayer" unique_id=508527189]
+layer = -10
+
+[node name="Control" type="Control" parent="." unique_id=2045553911]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1816117117]
+modulate = Color(0.21960784, 0.08627451, 0.19215687, 1)
+material = SubResource("CanvasItemMaterial_te3ct")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_bgaik")

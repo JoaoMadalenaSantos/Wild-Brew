@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://6eiylj6esp61"]
+
+[ext_resource type="PackedScene" uid="uid://clm0fg8527ha2" path="res://scenes/level/test_level.tscn" id="1_js1xr"]
+[ext_resource type="Script" uid="uid://blttty8sotav" path="res://resources/level/level_data.gd" id="1_rxkeq"]
+[ext_resource type="Script" uid="uid://b7wpqwpb6l5m0" path="res://resources/level/levels/portal.gd" id="1_xfwa0"]
+
+[sub_resource type="Resource" id="Resource_2p3wp"]
+script = ExtResource("1_xfwa0")
+tile_coords = Vector2i(7, 8)
+destination_level_id = "in_vehicle"
+starting_dir = Vector2(1, 0)
+metadata/_custom_type_script = "uid://b7wpqwpb6l5m0"
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_rxkeq")
+id = "test"
+scene = ExtResource("1_js1xr")
+possible_destinations = Array[ExtResource("1_xfwa0")]([SubResource("Resource_2p3wp")])
+metadata/_custom_type_script = "uid://blttty8sotav"

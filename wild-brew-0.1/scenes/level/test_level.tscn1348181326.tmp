@@ -819,7 +819,6 @@ texture = ExtResource("3_1v0db")
 8:13/0 = 0
 10:13/0 = 0
 10:12/0 = 0
-10:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4, 8, 4, 8, 8, -8, 8)
 11:12/0 = 0
 11:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4, 8, 4, 8, 8, -8, 8)
 
@@ -921,7 +920,6 @@ texture = ExtResource("3_1v0db")
 8:12/0 = 0
 9:12/0 = 0
 10:12/0 = 0
-10:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 11:12/0 = 0
 11:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:13/0 = 0
@@ -1325,7 +1323,7 @@ tile_set = SubResource("TileSet_1w08l")
 tile_map_data = PackedByteArray("AAADAAYAAAABAAoAAAADAAcAAAABAAsAAAAEAAYAAAACAAoAAAAEAAcAAAACAAsAAAAFAAYAAAADAAoAAAAFAAcAAAADAAsAAAAGAAYAAAAEAAoAAAAGAAcAAAAEAAsAAAAHAAYAAAAFAAoAAAAHAAcAAAAFAAsAAAAIAAYAAAAGAAoAAAAIAAcAAAAGAAsAAAAJAAcAAAAHAAsAAAAJAAgAAAAJAAwAAAA=")
 tile_set = SubResource("TileSet_bfy3h")
 
-[node name="Camera2D" parent="." unique_id=1703311188 node_paths=PackedStringArray("target") instance=ExtResource("5_1w08l")]
+[node name="Camera" parent="." unique_id=1703311188 node_paths=PackedStringArray("target") instance=ExtResource("5_1w08l")]
 target = NodePath("../Player")
 
 [node name="Player" parent="." unique_id=128115395 instance=ExtResource("4_1w08l")]
