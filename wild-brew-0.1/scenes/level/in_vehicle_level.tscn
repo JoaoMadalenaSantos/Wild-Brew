@@ -49,7 +49,6 @@ texture = ExtResource("1_be615")
 5:4/0 = 0
 5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4, 8, 4, 8, 8, -8, 8)
 6:4/0 = 0
-6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4, 8, 4, 8, 8, -8, 8)
 7:4/0 = 0
 7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:5/0 = 0
@@ -78,6 +77,8 @@ texture = ExtResource("1_be615")
 7:7/0 = 0
 6:5/0 = 0
 0:9/0 = 0
+6:10/0 = 0
+6:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -4, -8, -4, 4, 4, 4, 4, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_daunn"]
 physics_layer_0/collision_layer = 1
@@ -234,7 +235,7 @@ tile_set = SubResource("TileSet_bn8p3")
 z_index = 10
 
 [node name="Ground" type="TileMapLayer" parent="Level/Front" unique_id=1089013247]
-tile_map_data = PackedByteArray("AAAAAAAAAAABAAkAAAABAAAAAAACAAkAAAACAAAAAAADAAkAAAADAAAAAAAEAAkAAAAEAAAAAAAFAAkAAAAFAP7/AAAGAAcAAAAFAP//AAAGAAgAAAAFAAAAAAAGAAkAAAAGAP7/AAAHAAcAAAAGAP//AAAHAAgAAAAGAAAAAAAHAAQAAAAHAP//AAAIAAgAAAAHAAAAAAAIAAQAAAD//wEAAAAAAAkAAAD/////AAAAAAkAAAD+/wAAAAAAAAkAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAABAAkAAAABAAAAAAACAAkAAAACAAAAAAADAAkAAAADAAAAAAAEAAkAAAAEAAAAAAAFAAkAAAAFAP7/AAAGAAcAAAAFAP//AAAGAAgAAAAFAAAAAAAGAAkAAAAGAP7/AAAHAAcAAAAGAP//AAAHAAgAAAAGAAAAAAAHAAQAAAAHAP//AAAIAAgAAAAHAAAAAAAIAAQAAAD//wEAAAAAAAkAAAD/////AAAAAAkAAAD+/wAAAAAAAAkAAAAFAAEAAAAGAAoAAAA=")
 tile_set = SubResource("TileSet_daunn")
 
 [node name="Player" parent="." unique_id=128115395 instance=ExtResource("2_xus5c")]

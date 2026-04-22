@@ -5,7 +5,6 @@ extends Camera2D
 @export var speed: float = 10.0
 
 func _ready() -> void:
-	print("Camera: Starting position:", starting_position)
 	if target:
 		global_position = starting_position
 	make_current()

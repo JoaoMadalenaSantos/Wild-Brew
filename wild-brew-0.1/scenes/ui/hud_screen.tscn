@@ -1,0 +1,1330 @@
+[gd_scene format=3 uid="uid://cldsxycwcnwo8"]
+
+[ext_resource type="Script" uid="uid://baenty7m3ojkn" path="res://scripts/hud.gd" id="1_s46vt"]
+[ext_resource type="FontFile" uid="uid://gv5byox8bf17" path="res://assets/fonts/Tiny5-Regular.ttf" id="2_s46vt"]
+[ext_resource type="Texture2D" uid="uid://dsgnnkfd48mhp" path="res://assets/textures/ui/spr_light_ui_block_0.png" id="3_a2fth"]
+[ext_resource type="Texture2D" uid="uid://chdktv7x0r1bi" path="res://assets/textures/ui/spr_backpack_0.png" id="3_x1hne"]
+[ext_resource type="Script" uid="uid://bmhbbgq7su1n2" path="res://scripts/sounds_helper.gd" id="5_ww06q"]
+[ext_resource type="AudioStream" uid="uid://bd7x1v7fr5oqv" path="res://assets/sounds/sfx/sfx_item_select_0.mp3" id="6_a2fth"]
+[ext_resource type="AudioStream" uid="uid://cgt4ctoegrdoh" path="res://assets/sounds/sfx/sfx_item_collect_0.mp3" id="7_a2fth"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jx76c"]
+atlas = ExtResource("3_a2fth")
+region = Rect2(4, 36, 24, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_viq4t"]
+texture = SubResource("AtlasTexture_jx76c")
+texture_margin_left = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofyhh"]
+atlas = ExtResource("3_a2fth")
+region = Rect2(38, 6, 20, 21)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ofyhh"]
+texture = SubResource("AtlasTexture_ofyhh")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 34.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_viq4t"]
+atlas = ExtResource("3_a2fth")
+region = Rect2(38, 6, 20, 21)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t261t"]
+texture = SubResource("AtlasTexture_viq4t")
+texture_margin_left = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1th0"]
+atlas = ExtResource("3_a2fth")
+region = Rect2(36, 36, 24, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qvq4w"]
+texture = SubResource("AtlasTexture_a1th0")
+texture_margin_left = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxi7h"]
+atlas = ExtResource("3_a2fth")
+region = Rect2(6, 6, 20, 21)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rxfbr"]
+texture = SubResource("AtlasTexture_nxi7h")
+texture_margin_left = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="Theme" id="Theme_31p1l"]
+default_font = ExtResource("2_s46vt")
+Button/colors/font_color = Color(0.36862746, 0.7137255, 0.6784314, 1)
+Button/colors/font_hover_color = Color(0.105882354, 0.58431375, 0.5529412, 1)
+Button/colors/font_hover_pressed_color = Color(0.105882354, 0.58431375, 0.5529412, 1)
+Button/colors/font_pressed_color = Color(0.36862746, 0.7137255, 0.6784314, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/styles/disabled = SubResource("StyleBoxTexture_viq4t")
+Button/styles/focus = SubResource("StyleBoxTexture_ofyhh")
+Button/styles/hover = SubResource("StyleBoxTexture_t261t")
+Button/styles/hover_pressed = SubResource("StyleBoxTexture_qvq4w")
+Button/styles/normal = SubResource("StyleBoxTexture_rxfbr")
+Button/styles/pressed = SubResource("StyleBoxTexture_viq4t")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s2u0b"]
+load_path = "res://.godot/imported/spr_items_0.png-72954c2b613bd344dd8768e24fa452e7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ww06q"]
+atlas = SubResource("CompressedTexture2D_s2u0b")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_x1hne"]
+font = ExtResource("2_s46vt")
+font_size = 8
+font_color = Color(0.36862746, 0.7137255, 0.6784314, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8whbh"]
+font = ExtResource("2_s46vt")
+font_size = 8
+shadow_size = 0
+shadow_color = Color(0.21960784, 0.08627451, 0.19215687, 1)
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4sug6"]
+load_path = "res://.godot/imported/spr_items_0.png-72954c2b613bd344dd8768e24fa452e7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8whbh"]
+atlas = SubResource("CompressedTexture2D_4sug6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bc5ho"]
+load_path = "res://.godot/imported/spr_items_0.png-72954c2b613bd344dd8768e24fa452e7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hgh4"]
+atlas = SubResource("CompressedTexture2D_bc5ho")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ofyhh"]
+load_path = "res://.godot/imported/spr_items_0.png-72954c2b613bd344dd8768e24fa452e7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxfbr"]
+atlas = SubResource("CompressedTexture2D_ofyhh")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vu2i2"]
+atlas = ExtResource("3_x1hne")
+region = Rect2(0, 0, 112, 113)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qvq4w"]
+load_path = "res://.godot/imported/spr_light_ui_block_0.png-0e5567d771367c5035380644c1f475da.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gg081"]
+atlas = SubResource("CompressedTexture2D_qvq4w")
+region = Rect2(4, 100, 24, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dhkxc"]
+texture = SubResource("AtlasTexture_gg081")
+texture_margin_left = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a2fth"]
+load_path = "res://.godot/imported/spr_light_ui_block_0.png-0e5567d771367c5035380644c1f475da.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4sug6"]
+atlas = SubResource("CompressedTexture2D_a2fth")
+region = Rect2(38, 6, 20, 21)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8whbh"]
+texture = SubResource("AtlasTexture_4sug6")
+texture_margin_left = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_27cmb"]
+load_path = "res://.godot/imported/spr_light_ui_block_0.png-0e5567d771367c5035380644c1f475da.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bc5ho"]
+atlas = SubResource("CompressedTexture2D_27cmb")
+region = Rect2(38, 70, 20, 21)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8hgh4"]
+texture = SubResource("AtlasTexture_bc5ho")
+texture_margin_left = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s8y15"]
+load_path = "res://.godot/imported/spr_light_ui_block_0.png-0e5567d771367c5035380644c1f475da.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t261t"]
+atlas = SubResource("CompressedTexture2D_s8y15")
+region = Rect2(36, 100, 24, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nxi7h"]
+texture = SubResource("AtlasTexture_t261t")
+texture_margin_left = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rxfbr"]
+load_path = "res://.godot/imported/spr_light_ui_block_0.png-0e5567d771367c5035380644c1f475da.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31p1l"]
+atlas = SubResource("CompressedTexture2D_rxfbr")
+region = Rect2(6, 70, 20, 21)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a1th0"]
+texture = SubResource("AtlasTexture_31p1l")
+texture_margin_left = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="Theme" id="Theme_uxq2p"]
+default_font = ExtResource("2_s46vt")
+Button/colors/font_color = Color(0.8862745, 0.38039216, 0.34901962, 1)
+Button/colors/font_hover_color = Color(0.8862745, 0.10980392, 0.38039216, 1)
+Button/colors/font_hover_pressed_color = Color(0.8862745, 0.10980392, 0.38039216, 1)
+Button/colors/font_pressed_color = Color(0.8862745, 0.38039216, 0.34901962, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/styles/disabled = SubResource("StyleBoxTexture_dhkxc")
+Button/styles/focus = SubResource("StyleBoxTexture_8whbh")
+Button/styles/hover = SubResource("StyleBoxTexture_8hgh4")
+Button/styles/hover_pressed = SubResource("StyleBoxTexture_nxi7h")
+Button/styles/normal = SubResource("StyleBoxTexture_a1th0")
+Button/styles/pressed = SubResource("StyleBoxTexture_dhkxc")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_viq4t"]
+load_path = "res://.godot/imported/spr_items_0.png-72954c2b613bd344dd8768e24fa452e7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvq4w"]
+atlas = SubResource("CompressedTexture2D_viq4t")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_s2u0b"]
+font = ExtResource("2_s46vt")
+font_size = 8
+font_color = Color(0.8862745, 0.38039216, 0.34901962, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jx76c"]
+load_path = "res://.godot/imported/spr_items_0.png-72954c2b613bd344dd8768e24fa452e7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhkxc"]
+atlas = SubResource("CompressedTexture2D_jx76c")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ww06q"]
+font = ExtResource("2_s46vt")
+font_size = 8
+font_color = Color(0.8862745, 0.38039216, 0.34901962, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uxq2p"]
+load_path = "res://.godot/imported/spr_items_0.png-72954c2b613bd344dd8768e24fa452e7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwikt"]
+atlas = SubResource("CompressedTexture2D_uxq2p")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_a2fth"]
+font = ExtResource("2_s46vt")
+font_size = 8
+font_color = Color(0.8862745, 0.38039216, 0.34901962, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qqraw"]
+load_path = "res://.godot/imported/spr_items_0.png-72954c2b613bd344dd8768e24fa452e7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ytmp"]
+atlas = SubResource("CompressedTexture2D_qqraw")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4sug6"]
+font = ExtResource("2_s46vt")
+font_size = 8
+font_color = Color(0.8862745, 0.38039216, 0.34901962, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iuu4e"]
+load_path = "res://.godot/imported/spr_items_0.png-72954c2b613bd344dd8768e24fa452e7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwu6w"]
+atlas = SubResource("CompressedTexture2D_iuu4e")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nf2nf"]
+load_path = "res://.godot/imported/spr_items_0.png-72954c2b613bd344dd8768e24fa452e7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sn8l1"]
+atlas = SubResource("CompressedTexture2D_nf2nf")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_t7g37"]
+load_path = "res://.godot/imported/spr_items_0.png-72954c2b613bd344dd8768e24fa452e7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yuq4t"]
+atlas = SubResource("CompressedTexture2D_t7g37")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_t8g6n"]
+load_path = "res://.godot/imported/spr_items_0.png-72954c2b613bd344dd8768e24fa452e7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pafao"]
+atlas = SubResource("CompressedTexture2D_t8g6n")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_eqedm"]
+load_path = "res://.godot/imported/spr_items_0.png-72954c2b613bd344dd8768e24fa452e7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qv0jl"]
+atlas = SubResource("CompressedTexture2D_eqedm")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jj6b8"]
+load_path = "res://.godot/imported/spr_items_0.png-72954c2b613bd344dd8768e24fa452e7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ayah"]
+atlas = SubResource("CompressedTexture2D_jj6b8")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8135w"]
+load_path = "res://.godot/imported/spr_items_0.png-72954c2b613bd344dd8768e24fa452e7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_314pt"]
+atlas = SubResource("CompressedTexture2D_8135w")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kaisc"]
+load_path = "res://.godot/imported/spr_items_0.png-72954c2b613bd344dd8768e24fa452e7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ql2h0"]
+atlas = SubResource("CompressedTexture2D_kaisc")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b1um3"]
+load_path = "res://.godot/imported/spr_items_0.png-72954c2b613bd344dd8768e24fa452e7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yccd5"]
+atlas = SubResource("CompressedTexture2D_b1um3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j1s08"]
+load_path = "res://.godot/imported/spr_items_0.png-72954c2b613bd344dd8768e24fa452e7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q51r3"]
+atlas = SubResource("CompressedTexture2D_j1s08")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5p104"]
+load_path = "res://.godot/imported/spr_items_0.png-72954c2b613bd344dd8768e24fa452e7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppuej"]
+atlas = SubResource("CompressedTexture2D_5p104")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x1hne"]
+load_path = "res://.godot/imported/spr_items_0.png-72954c2b613bd344dd8768e24fa452e7.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2u0b"]
+atlas = SubResource("CompressedTexture2D_x1hne")
+region = Rect2(0, 0, 16, 16)
+
+[node name="HUD" type="Control" unique_id=86707672]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s46vt")
+inventory_tween_duration = 0.5
+
+[node name="Inventory" type="MarginContainer" parent="." unique_id=1992863942]
+layout_mode = 1
+offset_right = 160.0
+offset_bottom = 195.0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+
+[node name="HotBar" type="MarginContainer" parent="Inventory" unique_id=173442776]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="SlotLine" type="HBoxContainer" parent="Inventory/HotBar" unique_id=717283412]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 2
+
+[node name="Slot0" type="MarginContainer" parent="Inventory/HotBar/SlotLine" unique_id=1568321919]
+custom_minimum_size = Vector2(24, 25)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="Inventory/HotBar/SlotLine/Slot0" unique_id=1518520754]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_31p1l")
+toggle_mode = true
+icon = SubResource("AtlasTexture_ww06q")
+icon_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Inventory/HotBar/SlotLine/Slot0/Button" unique_id=2022350975]
+layout_mode = 1
+offset_right = 4.0
+offset_bottom = 9.0
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 1
+
+[node name="Label" type="Label" parent="Inventory/HotBar/SlotLine/Slot0/Button/MarginContainer" unique_id=454691434]
+layout_mode = 2
+text = "1"
+label_settings = SubResource("LabelSettings_x1hne")
+
+[node name="MarginContainer2" type="MarginContainer" parent="Inventory/HotBar/SlotLine/Slot0/Button" unique_id=719721290]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Quantity" type="Label" parent="Inventory/HotBar/SlotLine/Slot0/Button/MarginContainer2" unique_id=795020640]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = SubResource("LabelSettings_8whbh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Slot1" type="MarginContainer" parent="Inventory/HotBar/SlotLine" unique_id=1474174749]
+custom_minimum_size = Vector2(24, 25)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="Inventory/HotBar/SlotLine/Slot1" unique_id=2133169582]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_31p1l")
+toggle_mode = true
+icon = SubResource("AtlasTexture_8whbh")
+icon_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Inventory/HotBar/SlotLine/Slot1/Button" unique_id=900120221]
+layout_mode = 1
+offset_right = 4.0
+offset_bottom = 9.0
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 1
+
+[node name="Label" type="Label" parent="Inventory/HotBar/SlotLine/Slot1/Button/MarginContainer" unique_id=310518063]
+layout_mode = 2
+text = "2"
+label_settings = SubResource("LabelSettings_x1hne")
+
+[node name="MarginContainer2" type="MarginContainer" parent="Inventory/HotBar/SlotLine/Slot1/Button" unique_id=2062717225]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Quantity" type="Label" parent="Inventory/HotBar/SlotLine/Slot1/Button/MarginContainer2" unique_id=241368054]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = SubResource("LabelSettings_8whbh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Slot2" type="MarginContainer" parent="Inventory/HotBar/SlotLine" unique_id=1696835481]
+custom_minimum_size = Vector2(24, 25)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="Inventory/HotBar/SlotLine/Slot2" unique_id=725054865]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_31p1l")
+toggle_mode = true
+icon = SubResource("AtlasTexture_8hgh4")
+icon_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Inventory/HotBar/SlotLine/Slot2/Button" unique_id=1333336741]
+layout_mode = 1
+offset_right = 4.0
+offset_bottom = 9.0
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 1
+
+[node name="Label" type="Label" parent="Inventory/HotBar/SlotLine/Slot2/Button/MarginContainer" unique_id=1382605429]
+layout_mode = 2
+text = "3"
+label_settings = SubResource("LabelSettings_x1hne")
+
+[node name="MarginContainer2" type="MarginContainer" parent="Inventory/HotBar/SlotLine/Slot2/Button" unique_id=8040509]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Quantity" type="Label" parent="Inventory/HotBar/SlotLine/Slot2/Button/MarginContainer2" unique_id=1896360166]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = SubResource("LabelSettings_8whbh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Slot3" type="MarginContainer" parent="Inventory/HotBar/SlotLine" unique_id=245895312]
+custom_minimum_size = Vector2(24, 25)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="Inventory/HotBar/SlotLine/Slot3" unique_id=1162486505]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_31p1l")
+toggle_mode = true
+icon = SubResource("AtlasTexture_rxfbr")
+icon_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Inventory/HotBar/SlotLine/Slot3/Button" unique_id=446794536]
+layout_mode = 1
+offset_right = 4.0
+offset_bottom = 9.0
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 1
+
+[node name="Label" type="Label" parent="Inventory/HotBar/SlotLine/Slot3/Button/MarginContainer" unique_id=765308808]
+layout_mode = 2
+text = "4"
+label_settings = SubResource("LabelSettings_x1hne")
+
+[node name="MarginContainer2" type="MarginContainer" parent="Inventory/HotBar/SlotLine/Slot3/Button" unique_id=1497630051]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Quantity" type="Label" parent="Inventory/HotBar/SlotLine/Slot3/Button/MarginContainer2" unique_id=136575916]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = SubResource("LabelSettings_8whbh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Backpack" type="MarginContainer" parent="Inventory" unique_id=1774151061]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/margin_left = -112
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="BackpackTexture" type="TextureRect" parent="Inventory/Backpack" unique_id=286642161]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_vu2i2")
+
+[node name="MarginContainer" type="MarginContainer" parent="Inventory/Backpack" unique_id=1796795181]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inventory/Backpack/MarginContainer" unique_id=356638374]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="SlotLine0" type="HBoxContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer" unique_id=157895995]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 2
+
+[node name="Slot0" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine0" unique_id=70588202]
+custom_minimum_size = Vector2(24, 25)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine0/Slot0" unique_id=1607570523]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_uxq2p")
+toggle_mode = true
+keep_pressed_outside = true
+icon = SubResource("AtlasTexture_qvq4w")
+icon_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine0/Slot0/Button" unique_id=1395669237]
+layout_mode = 1
+offset_right = 4.0
+offset_bottom = 9.0
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 1
+
+[node name="Label" type="Label" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine0/Slot0/Button/MarginContainer" unique_id=1219763658]
+layout_mode = 2
+text = "1"
+label_settings = SubResource("LabelSettings_s2u0b")
+
+[node name="MarginContainer2" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine0/Slot0/Button" unique_id=169629580]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Quantity" type="Label" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine0/Slot0/Button/MarginContainer2" unique_id=907604654]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = SubResource("LabelSettings_8whbh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Slot1" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine0" unique_id=1457549907]
+custom_minimum_size = Vector2(24, 25)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine0/Slot1" unique_id=296896779]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_uxq2p")
+toggle_mode = true
+keep_pressed_outside = true
+icon = SubResource("AtlasTexture_dhkxc")
+icon_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine0/Slot1/Button" unique_id=1426240032]
+layout_mode = 1
+offset_right = 4.0
+offset_bottom = 9.0
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 1
+
+[node name="Label" type="Label" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine0/Slot1/Button/MarginContainer" unique_id=961173187]
+layout_mode = 2
+text = "2"
+label_settings = SubResource("LabelSettings_ww06q")
+
+[node name="MarginContainer2" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine0/Slot1/Button" unique_id=1164699200]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Quantity" type="Label" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine0/Slot1/Button/MarginContainer2" unique_id=1792426716]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = SubResource("LabelSettings_8whbh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Slot2" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine0" unique_id=1879188414]
+custom_minimum_size = Vector2(24, 25)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine0/Slot2" unique_id=735965802]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_uxq2p")
+toggle_mode = true
+keep_pressed_outside = true
+icon = SubResource("AtlasTexture_wwikt")
+icon_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine0/Slot2/Button" unique_id=1138231401]
+layout_mode = 1
+offset_right = 4.0
+offset_bottom = 9.0
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 1
+
+[node name="Label" type="Label" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine0/Slot2/Button/MarginContainer" unique_id=1429880669]
+layout_mode = 2
+text = "3"
+label_settings = SubResource("LabelSettings_a2fth")
+
+[node name="MarginContainer2" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine0/Slot2/Button" unique_id=861350815]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Quantity" type="Label" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine0/Slot2/Button/MarginContainer2" unique_id=1238214868]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = SubResource("LabelSettings_8whbh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Slot3" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine0" unique_id=1367471646]
+custom_minimum_size = Vector2(24, 25)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine0/Slot3" unique_id=1103938440]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_uxq2p")
+toggle_mode = true
+keep_pressed_outside = true
+icon = SubResource("AtlasTexture_0ytmp")
+icon_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine0/Slot3/Button" unique_id=2091322957]
+layout_mode = 1
+offset_right = 4.0
+offset_bottom = 9.0
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 1
+
+[node name="Label" type="Label" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine0/Slot3/Button/MarginContainer" unique_id=1031715350]
+layout_mode = 2
+text = "4"
+label_settings = SubResource("LabelSettings_4sug6")
+
+[node name="MarginContainer2" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine0/Slot3/Button" unique_id=1653082739]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Quantity" type="Label" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine0/Slot3/Button/MarginContainer2" unique_id=635433328]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = SubResource("LabelSettings_8whbh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="SlotLine1" type="HBoxContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer" unique_id=591696408]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 2
+
+[node name="Slot0" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine1" unique_id=114725691]
+custom_minimum_size = Vector2(24, 25)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine1/Slot0" unique_id=289802325]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_uxq2p")
+keep_pressed_outside = true
+icon = SubResource("AtlasTexture_nwu6w")
+icon_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine1/Slot0/Button" unique_id=20579411]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Quantity" type="Label" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine1/Slot0/Button/MarginContainer2" unique_id=1489543126]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = SubResource("LabelSettings_8whbh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Slot1" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine1" unique_id=1929358728]
+custom_minimum_size = Vector2(24, 25)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine1/Slot1" unique_id=1046007594]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_uxq2p")
+keep_pressed_outside = true
+icon = SubResource("AtlasTexture_sn8l1")
+icon_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine1/Slot1/Button" unique_id=687388455]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Quantity" type="Label" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine1/Slot1/Button/MarginContainer2" unique_id=563944625]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = SubResource("LabelSettings_8whbh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Slot2" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine1" unique_id=1781104581]
+custom_minimum_size = Vector2(24, 25)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine1/Slot2" unique_id=1397247427]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_uxq2p")
+keep_pressed_outside = true
+icon = SubResource("AtlasTexture_yuq4t")
+icon_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine1/Slot2/Button" unique_id=1675016717]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Quantity" type="Label" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine1/Slot2/Button/MarginContainer2" unique_id=674970182]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = SubResource("LabelSettings_8whbh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Slot3" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine1" unique_id=1991686689]
+custom_minimum_size = Vector2(24, 25)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine1/Slot3" unique_id=1430277403]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_uxq2p")
+keep_pressed_outside = true
+icon = SubResource("AtlasTexture_pafao")
+icon_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine1/Slot3/Button" unique_id=1321137561]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Quantity" type="Label" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine1/Slot3/Button/MarginContainer2" unique_id=1198901460]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = SubResource("LabelSettings_8whbh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="SlotLine2" type="HBoxContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer" unique_id=1529346681]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 2
+
+[node name="Slot0" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine2" unique_id=492287087]
+custom_minimum_size = Vector2(24, 25)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine2/Slot0" unique_id=380899672]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_uxq2p")
+keep_pressed_outside = true
+icon = SubResource("AtlasTexture_qv0jl")
+icon_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine2/Slot0/Button" unique_id=1219243367]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Quantity" type="Label" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine2/Slot0/Button/MarginContainer2" unique_id=663211456]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = SubResource("LabelSettings_8whbh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Slot1" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine2" unique_id=2029839945]
+custom_minimum_size = Vector2(24, 25)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine2/Slot1" unique_id=132813507]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_uxq2p")
+keep_pressed_outside = true
+icon = SubResource("AtlasTexture_6ayah")
+icon_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine2/Slot1/Button" unique_id=686934942]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Quantity" type="Label" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine2/Slot1/Button/MarginContainer2" unique_id=563110289]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = SubResource("LabelSettings_8whbh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Slot2" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine2" unique_id=1362244209]
+custom_minimum_size = Vector2(24, 25)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine2/Slot2" unique_id=1843444654]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_uxq2p")
+keep_pressed_outside = true
+icon = SubResource("AtlasTexture_314pt")
+icon_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine2/Slot2/Button" unique_id=2124245115]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Quantity" type="Label" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine2/Slot2/Button/MarginContainer2" unique_id=30531113]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = SubResource("LabelSettings_8whbh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Slot3" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine2" unique_id=449053137]
+custom_minimum_size = Vector2(24, 25)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine2/Slot3" unique_id=693206776]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_uxq2p")
+keep_pressed_outside = true
+icon = SubResource("AtlasTexture_ql2h0")
+icon_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine2/Slot3/Button" unique_id=1530138394]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Quantity" type="Label" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine2/Slot3/Button/MarginContainer2" unique_id=549276523]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = SubResource("LabelSettings_8whbh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="SlotLine3" type="HBoxContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer" unique_id=1399054352]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 2
+
+[node name="Slot0" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine3" unique_id=1850486154]
+custom_minimum_size = Vector2(24, 25)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine3/Slot0" unique_id=703531358]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_uxq2p")
+keep_pressed_outside = true
+icon = SubResource("AtlasTexture_yccd5")
+icon_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine3/Slot0/Button" unique_id=226738516]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Quantity" type="Label" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine3/Slot0/Button/MarginContainer2" unique_id=458907564]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = SubResource("LabelSettings_8whbh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Slot1" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine3" unique_id=1539681956]
+custom_minimum_size = Vector2(24, 25)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine3/Slot1" unique_id=212324435]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_uxq2p")
+keep_pressed_outside = true
+icon = SubResource("AtlasTexture_q51r3")
+icon_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine3/Slot1/Button" unique_id=1626456942]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Quantity" type="Label" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine3/Slot1/Button/MarginContainer2" unique_id=2096072339]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = SubResource("LabelSettings_8whbh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Slot2" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine3" unique_id=1094398089]
+custom_minimum_size = Vector2(24, 25)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine3/Slot2" unique_id=1693760680]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_uxq2p")
+keep_pressed_outside = true
+icon = SubResource("AtlasTexture_ppuej")
+icon_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine3/Slot2/Button" unique_id=1578947273]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Quantity" type="Label" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine3/Slot2/Button/MarginContainer2" unique_id=71100258]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = SubResource("LabelSettings_8whbh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Slot3" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine3" unique_id=1739493993]
+custom_minimum_size = Vector2(24, 25)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine3/Slot3" unique_id=968960314]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_uxq2p")
+keep_pressed_outside = true
+icon = SubResource("AtlasTexture_s2u0b")
+icon_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine3/Slot3/Button" unique_id=1674781943]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Quantity" type="Label" parent="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine3/Slot3/Button/MarginContainer2" unique_id=442095520]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = SubResource("LabelSettings_8whbh")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="SoundHelper" type="Node2D" parent="." unique_id=687078479]
+script = ExtResource("5_ww06q")
+
+[node name="ItemSelect" type="AudioStreamPlayer2D" parent="SoundHelper" unique_id=2049606273]
+stream = ExtResource("6_a2fth")
+volume_db = -20.0
+
+[node name="ItemCollect" type="AudioStreamPlayer2D" parent="SoundHelper" unique_id=523181126]
+stream = ExtResource("7_a2fth")
+volume_db = -25.0
+
+[connection signal="pressed" from="Inventory/HotBar/SlotLine/Slot0/Button" to="." method="update_selected_slot" binds= [0]]
+[connection signal="pressed" from="Inventory/HotBar/SlotLine/Slot1/Button" to="." method="update_selected_slot" binds= [1]]
+[connection signal="pressed" from="Inventory/HotBar/SlotLine/Slot2/Button" to="." method="update_selected_slot" binds= [2]]
+[connection signal="pressed" from="Inventory/HotBar/SlotLine/Slot3/Button" to="." method="update_selected_slot" binds= [3]]
+[connection signal="pressed" from="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine0/Slot0/Button" to="." method="update_selected_slot" binds= [0]]
+[connection signal="pressed" from="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine0/Slot1/Button" to="." method="update_selected_slot" binds= [1]]
+[connection signal="pressed" from="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine0/Slot2/Button" to="." method="update_selected_slot" binds= [2]]
+[connection signal="pressed" from="Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine0/Slot3/Button" to="." method="update_selected_slot" binds= [3]]

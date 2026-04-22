@@ -44,9 +44,11 @@ func _on_timer_timeout():
 	
 	tween.finished.connect(func():
 		emit_signal("open_finished")
+		visible = false
 	)
 
 func close():
+	visible = true
 	target_diameter = 0.0
 	
 	var tween = create_tween()

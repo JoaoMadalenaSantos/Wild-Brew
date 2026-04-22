@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://wca4wn1nmwcy" path="res://scenes/ui/transition_screen.tscn" id="1_tefeu"]
 [ext_resource type="Script" uid="uid://bbafk6sa6c8po" path="res://scripts/gameplay_manager.gd" id="2_jyhfs"]
 [ext_resource type="Script" uid="uid://bsaanw3bxo5sh" path="res://scripts/level_manager.gd" id="2_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://cldsxycwcnwo8" path="res://scenes/ui/hud_screen.tscn" id="4_tefeu"]
 [ext_resource type="Resource" uid="uid://6eiylj6esp61" path="res://resources/level/levels/test_level.tres" id="5_tefeu"]
 
 [node name="Main" type="Node2D" unique_id=487464609]
@@ -15,7 +16,12 @@ script = ExtResource("1_tbgi4")
 
 [node name="UI" type="Node" parent="UIRoot" unique_id=27642622]
 
+[node name="HUDLayer" type="CanvasLayer" parent="UIRoot/UI" unique_id=2141461288]
+
+[node name="HUD" parent="UIRoot/UI/HUDLayer" unique_id=86707672 instance=ExtResource("4_tefeu")]
+
 [node name="TransitionLayer" type="CanvasLayer" parent="UIRoot/UI" unique_id=1235088546]
+layer = 10
 
 [node name="TransitionScreen" parent="UIRoot/UI/TransitionLayer" unique_id=985824951 instance=ExtResource("1_tefeu")]
 
@@ -25,8 +31,6 @@ script = ExtResource("1_tbgi4")
 script = ExtResource("2_jyhfs")
 
 [node name="Gameplay" type="Node" parent="GameplayRoot" unique_id=147783078]
-
-[node name="HUD" type="Node" parent="GameplayRoot/Gameplay" unique_id=1043136061]
 
 [node name="LevelRoot" type="Node" parent="GameplayRoot/Gameplay" unique_id=219987415]
 

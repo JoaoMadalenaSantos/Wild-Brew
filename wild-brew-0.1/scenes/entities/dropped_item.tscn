@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cor8midgj7akr"]
+
+[ext_resource type="Script" uid="uid://cpxsuok6wlxbs" path="res://scripts/dropped_item.gd" id="1_c4qjp"]
+[ext_resource type="Texture2D" uid="uid://dok00nvatclm4" path="res://assets/textures/level/spr_items_0.png" id="2_f8u78"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frk6y"]
+atlas = ExtResource("2_f8u78")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nej08"]
+radius = 16.0
+
+[node name="DroppedItem" type="Node2D" unique_id=1988933642]
+z_index = 10
+script = ExtResource("1_c4qjp")
+spawn_distance_travelled = 8.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2137918429]
+texture = SubResource("AtlasTexture_frk6y")
+
+[node name="PlayerDetector" type="Area2D" parent="." unique_id=272385525]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector" unique_id=1934646831]
+shape = SubResource("CircleShape2D_nej08")
+
+[node name="CollectingSound" type="AudioStreamPlayer2D" parent="." unique_id=1711031537]
+
+[connection signal="area_entered" from="PlayerDetector" to="." method="_on_player_detector_area_entered"]
