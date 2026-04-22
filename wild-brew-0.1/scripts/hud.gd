@@ -1,6 +1,7 @@
 extends Control
 
-@onready var gameplay_manager: Node = $"../../../../GameplayRoot/GameplayManager"
+@onready var ui_manager: Node = $"../../../UIManager"
+
 @onready var hotbar_container: HBoxContainer = $Inventory/HotBar/SlotLine
 @onready var inventory_hotbar_container: HBoxContainer = $Inventory/Backpack/MarginContainer/VBoxContainer/SlotLine0
 @onready var backpack_container: MarginContainer = $Inventory/Backpack
@@ -232,8 +233,8 @@ func update_inventory_slot_item(line: int, collumn: int, item: ItemData):
 	
 	update_inventory()
 	
-func update_inventory():
-	for line in inventory_data:
+func update_inventory(new_inventory_data: Dictionary):
+	for line in new_inventory_data:
 		print("HUD: Updating inventory line ", line)
 		if line == 0:
 			for container in hotbar_containers_list:
@@ -242,8 +243,8 @@ func update_inventory():
 					var button_node = slot.find_child("Button", false)
 					
 					var slot_index = hotbar_slot_list.find(slot)
-					var item_data: ItemData = inventory_data[line][slot_index][0]
-					var item_quantity: int = inventory_data[line][slot_index][1]
+					var item_data: ItemData = new_inventory_data[line][slot_index][0]
+					var item_quantity: int = new_inventory_data[line][slot_index][1]
 					
 					print("HUD: Item data in inventory slot line ", line, " and collunm ", slot, " is ", item_data, " and quantity is ", item_quantity)
 					

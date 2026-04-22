@@ -1,8 +1,9 @@
 extends Control
 
+@onready var ui_manager: Node = $"../../../UIManager"
+
 @onready var color_rect: ColorRect = $ColorRect
 @onready var timer: Timer = $Timer
-@onready var ui_manager: Node = $"../../../UIManager"
 
 @export var transition_duration: float = 0.5
 

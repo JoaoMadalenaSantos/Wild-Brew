@@ -36,6 +36,6 @@ func _on_player_detector_area_entered(area: Area2D) -> void:
 		dropped_item_found_player.connect(body._on_dropped_item_found_player)
 		emit_signal("dropped_item_found_player", self)
 
-func _on_player_has_space_in_inventory():
+func _on_collected():
 	collecting_sound.play()
 	queue_free()

@@ -46,7 +46,7 @@ func find_space_for_item(item: ItemData) -> Array:
 	
 	return []
 				
-func try_adding_item(item: ItemData, quantity: int):
+func try_adding_item(item: ItemData, quantity: int) -> bool:
 	var slot_for_item: Array
 	var quantity_to_add = quantity
 	
@@ -70,7 +70,12 @@ func try_adding_item(item: ItemData, quantity: int):
 			set_slot(item, new_quantity, slot_for_item[0], slot_for_item[1])
 			quantity_to_add = 0
 	
+	if slot_for_item.is_empty():
+		return false
+	
 	emit_signal("inventory_data_changed", inventory_data)
+	
+	return true
 
 func set_slot(item: ItemData, quantity: int, line: int, collumn: int):
 	if not item.collectable:
